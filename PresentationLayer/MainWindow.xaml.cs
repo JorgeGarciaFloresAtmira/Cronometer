@@ -24,14 +24,19 @@ namespace PresentationLayer
         {
             InitializeComponent();
 
-            stopwatch = new Stopwatch();
-            timer = new Timer(interval: 1000);
-            timer.Elapsed += OnTimerElapse;
-            TxtTimeDisplay.Text = _startTimeDisplay; ;
+            InitializeCronometer();
         }
         #endregion
 
         #region Private Methods
+        private void InitializeCronometer()
+        {
+            stopwatch = new Stopwatch();
+            timer = new Timer(interval: 1000);
+            timer.Elapsed += OnTimerElapse;
+            TxtTimeDisplay.Text = _startTimeDisplay;
+        }
+
         /// <summary>
         /// Shows the current time in the cronometer
         /// </summary>
